@@ -1,42 +1,13 @@
 <template>
     <div id="app">
-        <h1>Vue.js Demo App</h1>
-        <div>
-            <project-list v-bind:projects="projects"></project-list>
-            <create-project v-on:create-todo="createProject"></create-project>
-        </div>
+        <router-link :to="{ name: 'Home' }">Home</router-link>
+        <router-link :to="{ name: 'Create' }">About</router-link>
+        <router-view></router-view>
     </div>
 </template>
 
-<script>
-    import ProjectList from './components/ProjectList';
-    import CreateProject from './components/createProject';
-
+<script type="text/javascript">
     export default {
-        name: 'app',
-        components: {
-            ProjectList,
-            CreateProject,
-        },
-        data() {
-            return {
-                projects: [
-                    {
-                        ProjectName: "Project A",
-                        ProjectType: "Social"
-                    },
-                    {
-                        ProjectName: "Project Brook",
-                        ProjectType: "Development"
-                    }
-                ],
-            };
-        },
-        methods: {
-            createProject: function (project) {
-                this.projects.push(project);
-                this.$swal('Success!', 'You clicked the button!', 'success');
-            }
-        }
+        name: 'app'
     };
 </script>
