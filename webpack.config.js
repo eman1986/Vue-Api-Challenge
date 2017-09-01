@@ -3,7 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const VENDOR_LIBS = [
-    'axios', 'sweetalert2', 'tingle.js', 'uuid',
+    'axios', 'sweetalert2', 'uuid',
     'vee-validate', 'vue', 'vue-router', 'vue-sweetalert2', 'vuex'
 ];
 
