@@ -4,7 +4,7 @@ import swal from 'sweetalert2';
 export const GetUsers = (context) => {
     api.getUsers()
     .then((resp) => {
-        context.commit('SetUsers', {users: resp});
+        context.commit('SetUsers', {users: resp.data});
     })
     .catch((error) => {
         swal('Oops...', "Couldn't Load User List", 'error');

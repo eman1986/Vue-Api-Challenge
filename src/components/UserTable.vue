@@ -33,11 +33,9 @@
     import {mapState, mapActions} from 'vuex'
 
     export default {
-        data() {
-            return {
-                users: mapState({
-                    messages: state => state.users.data
-                })
+        computed: {
+            users: function() {
+                return this.$store.getters.getUsers;
             }
         },
         mounted: function() {

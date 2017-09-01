@@ -1,13 +1,6 @@
 <template>
-  <div id="projects">
-    <div class="columns">
-      <div class="column is-half">
-        <div class="notification">
-          Project List
-        </div>
-        <user-table />
-      </div>
-    </div>
+  <div>
+    <user-table/>
   </div>
 </template>
 

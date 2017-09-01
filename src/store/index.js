@@ -19,6 +19,9 @@ const store = new Vuex.Store({
     mutations: {
         SetUsers,
         AddUser
+    },
+    getters: {
+        getUsers: state => state.users
     }
 });
 
