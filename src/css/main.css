@@ -1,0 +1,207 @@
+body {
+    font-family: "Open Sans", Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/*a {*/
+    /*color: #fff;*/
+    /*-webkit-transition: 0.5s;*/
+    /*-o-transition: 0.5s;*/
+    /*transition: 0.5s;*/
+/*}*/
+
+/*a:hover, a:active, a:focus {*/
+    /*color: #fff;*/
+    /*outline: none;*/
+    /*text-decoration: none;*/
+/*}*/
+
+h1, h2, h3, h4, h5, h6, figure {
+    color: #000;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-weight: 400;
+    margin: 0 0 20px 0;
+}
+
+/* Bulma Override */
+.navbar {
+    background-color: #002C5F;
+    min-height: 3.25rem;
+    position: relative;
+}
+
+.navbar-burger:hover {
+    background-color: #8C9192;
+}
+
+.navbar-burger.is-active span {
+    background-color: #fff;
+}
+
+.navbar-item,
+.navbar-link {
+    color: #fff;
+}
+
+a.navbar-item:hover, a.navbar-item.is-active,
+.navbar-link:hover,
+.navbar-link.is-active {
+    background-color: #8C9192;
+    color: #fff;
+}
+
+.navbar-item.is-tab:hover {
+    border-bottom-color:#093B70;
+}
+
+.navbar-item.is-tab.is-active {
+    border-bottom: 3px solid#093B70;
+    color:#093B70;
+}
+
+.navbar-divider {
+    background-color: #8C9192;
+}
+
+.navbar-dropdown {
+    background-color: #002C5F;
+    border-top: 1px solid #002C5F;
+}
+
+.navbar-dropdown a.navbar-item:hover {
+    background-color: #8C9192;
+    color: #000;
+}
+
+.navbar-dropdown a.navbar-item.is-active {
+    background-color: #8C9192;
+    color: #000;
+}
+
+.navbar-item.has-dropdown:hover .navbar-link, .navbar-item.has-dropdown.is-active .navbar-link {
+    background-color: #8C9192;
+}
+
+@media screen and (min-width: 1008px) {
+    .navbar-link::after {
+        border: 1px solid #8C9192;
+        border-right: 0;
+        border-top: 0;
+        content: " ";
+        display: block;
+        height: 0.5em;
+        pointer-events: none;
+        position: absolute;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        width: 0.5em;
+        margin-top: -0.375em;
+        right: 1.125em;
+        top: 50%;
+    }
+}
+
+/*
+CREDIT: https://github.com/Wikiki/bulma-pageloader
+*/
+.pageloader {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #002C5F;
+    z-index: 999998;
+    transition: -webkit-transform 0.35s ease-out;
+    transition: transform 0.35s ease-out;
+    transition: transform 0.35s ease-out, -webkit-transform 0.35s ease-out;
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    will-change: transform;
+}
+
+.pageloader.is-active {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.pageloader::after, .pageloader::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    border-radius: 100%;
+    content: "";
+    z-index: 999999;
+}
+
+.pageloader::after {
+    margin-top: -100px;
+    margin-left: -100px;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 3px solid rgba(255, 255, 255, 0.75);
+    -webkit-animation: page-loader-inner 1.5s infinite ease-out;
+    animation: page-loader-inner 1.5s infinite ease-out;
+}
+
+.pageloader::before {
+    margin-top: -30px;
+    margin-left: -30px;
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    -webkit-animation: page-loader-outer 1.5s infinite ease-in;
+    animation: page-loader-outer 1.5s infinite ease-in;
+}
+
+@-webkit-keyframes page-loader-inner {
+    0%, 40% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes page-loader-inner {
+    0%, 40% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes page-loader-outer {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    100%, 40% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes page-loader-outer {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    100%, 40% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 0;
+    }
+}

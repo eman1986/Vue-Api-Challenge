@@ -1,13 +1,13 @@
 <template>
     <div>
-        <table>
+        <table class="table">
             <thead>
             <tr>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Employee ID</th>
                 <th>Department</th>
-                <th>&nbsp;</th>
+                <th class="has-text-centered"><i class="fa fa-cogs"></i></th>
             </tr>
             </thead>
             <tbody>
@@ -30,8 +30,6 @@
 </template>
 
 <script type="text/javascript">
-    import {mapState, mapActions} from 'vuex'
-
     export default {
         computed: {
             users: function() {

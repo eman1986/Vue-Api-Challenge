@@ -23,9 +23,7 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.vue'],
         alias:      {
-            'vue$':       'vue/dist/vue.common.js',
-            'src':        resolve('src'),
-            'components': resolve('src/components')
+            'vue$':       'vue/dist/vue.esm.js'
         }
     },
     module:  {
@@ -40,6 +38,10 @@ module.exports = {
                 test: /\.css$/
             },
             {
+                test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+                use:  'file-loader?name=fonts/[name].[ext]'
+            },
+            {
                 test:   /\.vue$/,
                 loader: 'vue-loader'
             }
@@ -47,7 +49,7 @@ module.exports = {
     },
     plugins: [
         new ExtractTextPlugin({
-            filename:  'bundle.min.css',
+            filename:  '[name].min.css',
             disable:   false,
             allChunks: true
         }),
