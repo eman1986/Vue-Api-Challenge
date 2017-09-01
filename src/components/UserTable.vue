@@ -11,15 +11,15 @@
             </tr>
             </thead>
             <tbody>
-            <tr v-for="user in users" :key="user.Id">
-                <td>{{ user.FirstName }}</td>
-                <td>{{ user.LastName }}</td>
-                <td>{{ user.EmployeeId }}</td>
-                <td>{{ user.Department }}</td>
+            <tr v-for="user in users">
+                <td>{{ user.firstName }}</td>
+                <td>{{ user.lastName }}</td>
+                <td>{{ user.employeeId }}</td>
+                <td>{{ user.department }}</td>
                 <td>
                     <small>
-                        <router-link :to="{ name: 'Details', params: { id: user.Id } }">View</router-link>
-                        <router-link :to="{ name: 'Edit', params: { id: user.Id } }">Edit</router-link>
+                        <router-link :to="{ name: 'Details', params: { id: user.id } }">View</router-link>
+                        <router-link :to="{ name: 'Edit', params: { id: user.id } }">Edit</router-link>
                         <a href="#">Delete</a>
                     </small>
                 </td>
@@ -30,12 +30,18 @@
 </template>
 
 <script type="text/javascript">
-    import { mapState } from 'vuex';
+    import {mapState, mapActions} from 'vuex'
 
     export default {
-        name: 'UserList',
-        computed: mapState([
-            'users'
-        ])
+        data() {
+            return {
+                users: mapState({
+                    messages: state => state.users.data
+                })
+            }
+        },
+        mounted: function() {
+            this.$store.dispatch('GetUsers')
+        }
     }
 </script>

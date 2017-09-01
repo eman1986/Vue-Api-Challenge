@@ -6,7 +6,7 @@ import axios from 'axios';
  */
 function getUsers()
 {
-    return axios.get('http://localhost/api/User/GetAll');
+    return axios.get('http://localhost:5000/api/User/GetAll');
 }
 
 /**
@@ -16,7 +16,7 @@ function getUsers()
  */
 function getUserById(id)
 {
-    return axios.get(`http://localhost/api/User/Get/${id}`);
+    return axios.get(`http://localhost:5000/api/User/Get/${id}`);
 }
 
 /**
@@ -26,7 +26,7 @@ function getUserById(id)
  */
 function createUser(user)
 {
-    return axios.post('http://localhost/api/User/Insert', user);
+    return axios.post('http://localhost:5000/api/User/Insert', user);
 }
 
 /**
@@ -36,7 +36,7 @@ function createUser(user)
  */
 function saveUser(user)
 {
-    return axios.post('http://localhost/api/User/Save', user);
+    return axios.post('http://localhost:5000/api/User/Save', user);
 }
 
 /**
@@ -46,7 +46,7 @@ function saveUser(user)
  */
 function deleteUser(id)
 {
-    return axios.get(`http://localhost/api/User/Delete/${id}`);
+    return axios.get(`http://localhost:5000/api/User/Delete/${id}`);
 }
 
 export { getUsers, getUserById, createUser, saveUser, deleteUser };

@@ -1,16 +1,39 @@
 <template>
     <div>
-        <button type="button" class="button" @click="addProject()">Add New Project</button>
+        <div>
+            <label for="FirstName">First Name</label>
+            <input @input="FirstName" type="text" id="FirstName">
+        </div>
+        <div>
+            <label for="LastName">Last Name</label>
+            <input @input="LastName" type="text" id="LastName">
+        </div>
+        <div>
+            <button @click="sendForm()">Create User</button>
+        </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'createUser',
+        data() {
+            return {
+                FirstName: '',
+                LastName: ''
+            };
+        },
         methods: {
-            addProject () {
-                this.$store.dispatch('CreateUser', this.user);
+            sendForm(e) {
+                if(this.ProjectName.length > 0 && this.ProjectType.length > 0) {
+                    const projectName = this.ProjectName;
+                    const projectType = this.ProjectType;
+
+                    this.$store.dispatch('CreateUser', e.target.value);
+
+                    this.ProjectName = '';
+                    this.ProjectType = '';
+                }
             }
         }
-    }
+    };
 </script>

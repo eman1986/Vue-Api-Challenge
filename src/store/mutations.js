@@ -1,8 +1,6 @@
-export const mutations = {
-    SetUsers: (state, { users }) => {
-        state.users = users
-    },
-    AddUser: (state, user) => {
-        state.users.push(user);
-    }
+export const SetUsers = (state, { users }) => {
+    state.users = users
+};
+export const AddUser = (state, user) => {
+    state.users.push(user);
 };

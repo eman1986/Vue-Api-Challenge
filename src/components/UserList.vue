@@ -5,22 +5,18 @@
         <div class="notification">
           Project List
         </div>
-        <project-table />
+        <user-table />
       </div>
     </div>
   </div>
 </template>
 
 <script type="text/javascript">
-    import userTable from '../components/UserTable.vue'
+    import userTable from '../components/UserTable'
 
     export default {
-        name: 'users',
         components: {
             userTable
-        },
-        mounted: () => {
-            this.$store.dispatch('GetUsers')
         }
     };
 </script>
