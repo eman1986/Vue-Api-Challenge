@@ -23,13 +23,39 @@ export const GetUserById = (context, userId) => {
     });
 };
 
-export const CreateUser = (context, user) => {
+export const CreateUser = (context) => {
+    const user = context.store.state.forms.EditUser;
+
     api.createUser(user)
-    .then((resp) => {
-        context.commit('AddUser', store.state.formValues);
-    })
-    .catch((error) => {
-        swal('Oops...', 'Failed to create user', 'error');
-        console.log(error);
-    });
+        .then((resp) => {
+            context.commit('AddUser', user);
+        })
+        .catch((error) => {
+            swal('Oops...', 'Failed to create user', 'error');
+            console.log(error);
+        });
+};
+
+export const SaveUser = (context) => {
+    const user = context.store.state.forms.EditUser;
+
+    api.saveUser(user)
+        .then((resp) => {
+            context.commit('UpdateUser', user);
+        })
+        .catch((error) => {
+            swal('Oops...', 'Failed to update user', 'error');
+            console.log(error);
+        });
+};
+
+export const DeleteUser = (context, userId) => {
+    api.deleteUser(userId)
+        .then((resp) => {
+            context.commit('RemoveUser', userId);
+        })
+        .catch((error) => {
+            swal('Oops...', 'Failed to delete user', 'error');
+            console.log(error);
+        });
 };

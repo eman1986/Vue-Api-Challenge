@@ -46,6 +46,8 @@
 
                     this.ProjectName = '';
                     this.ProjectType = '';
+
+                    this.$route.router.go('/'); // on success only.
                 }
             }
         }
