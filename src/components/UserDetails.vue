@@ -14,7 +14,7 @@
                 <router-link :to="{ name: 'Edit', params: { id: user.id } }">Edit</router-link>
             </p>
             <p class="card-footer-item">
-                <a href="">Delete</a>
+                <a href="#" class="has-text-danger">Delete</a>
             </p>
         </footer>
     </div>

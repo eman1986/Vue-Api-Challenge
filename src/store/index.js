@@ -8,7 +8,10 @@ Vue.use(Vuex);
 const state = {
     users: [],
     userDetails: {},
-    formValues: {}
+    forms: {
+        NewUser: {},
+        EditUser: {}
+    }
 };
 
 const store = new Vuex.Store({

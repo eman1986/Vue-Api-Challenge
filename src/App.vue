@@ -17,7 +17,7 @@
                 </div>
             </div>
         </nav>
-        <div class="container is-fluid">
+        <div class="container">
             <div class="columns">
                 <div class="column is-11">
                     <br>
