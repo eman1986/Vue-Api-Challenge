@@ -2,22 +2,19 @@
     <div class="card">
         <div class="card-content">
             <p class="title">
-                {{ user.user.firstName  }}
+                {{ user.firstName  }} {{ user.lastName  }}
             </p>
             <p class="subtitle">
-                Jeff Atwood
+                Department: {{ user.department  }}<br>
+                EmployeeID: {{ user.employeeId  }}
             </p>
         </div>
         <footer class="card-footer">
             <p class="card-footer-item">
-      <span>
-        View on <a href="https://twitter.com/codinghorror/status/506010907021828096">Twitter</a>
-      </span>
+                <router-link :to="{ name: 'Edit', params: { id: user.id } }">Edit</router-link>
             </p>
             <p class="card-footer-item">
-      <span>
-        Share on <a href="#">Facebook</a>
-      </span>
+                <a href="">Delete</a>
             </p>
         </footer>
     </div>

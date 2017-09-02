@@ -20,6 +20,7 @@
         <div class="container is-fluid">
             <div class="columns">
                 <div class="column is-11">
+                    <br>
                     <router-view></router-view>
                 </div>
             </div>
