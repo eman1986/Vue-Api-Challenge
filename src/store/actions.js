@@ -23,9 +23,7 @@ export const GetUserById = (context, userId) => {
     });
 };
 
-export const CreateUser = (context) => {
-    const user = context.store.state.forms.EditUser;
-
+export const CreateUser = (context, user) => {
     api.createUser(user)
         .then((resp) => {
             context.commit('AddUser', user);
@@ -36,9 +34,7 @@ export const CreateUser = (context) => {
         });
 };
 
-export const SaveUser = (context) => {
-    const user = context.store.state.forms.EditUser;
-
+export const SaveUser = (context, user) => {
     api.saveUser(user)
         .then((resp) => {
             context.commit('UpdateUser', user);

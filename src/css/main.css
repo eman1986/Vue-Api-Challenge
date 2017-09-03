@@ -5,18 +5,18 @@ body {
     line-height: 1.7;
 }
 
-/*a {*/
-    /*color: #fff;*/
-    /*-webkit-transition: 0.5s;*/
-    /*-o-transition: 0.5s;*/
-    /*transition: 0.5s;*/
-/*}*/
+a {
+    color: #093B70;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
 
-/*a:hover, a:active, a:focus {*/
-    /*color: #fff;*/
-    /*outline: none;*/
-    /*text-decoration: none;*/
-/*}*/
+a:hover, a:active, a:focus {
+    color: #8C9192;
+    outline: none;
+    text-decoration: none;
+}
 
 h1, h2, h3, h4, h5, h6, figure {
     color: #000;

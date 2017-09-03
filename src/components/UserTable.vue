@@ -18,9 +18,9 @@
                 <td>{{ user.department }}</td>
                 <td>
                     <small>
-                        <router-link :to="{ name: 'Details', params: { id: user.id } }">View</router-link>
-                        <router-link :to="{ name: 'Edit', params: { id: user.id } }">Edit</router-link>
-                        <a href="#">Delete</a>
+                        <router-link :to="{ name: 'Details', params: { id: user.id } }"><i class="fa fa-eye"></i></router-link>
+                        <router-link :to="{ name: 'Edit', params: { id: user.id } }"><i class="fa fa-pencil"></i></router-link>
+                        <a href="#"><i class="fa fa-trash"></i></a>
                     </small>
                 </td>
             </tr>
@@ -37,7 +37,7 @@
             }
         },
         mounted: function() {
-            this.$store.dispatch('GetUsers')
+            this.$store.dispatch('GetUsers');
         }
     }
 </script>

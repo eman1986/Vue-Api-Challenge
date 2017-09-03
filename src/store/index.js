@@ -7,11 +7,7 @@ Vue.use(Vuex);
 
 const state = {
     users: [],
-    userDetails: {},
-    forms: {
-        NewUser: {},
-        EditUser: {}
-    }
+    userDetails: {}
 };
 
 const store = new Vuex.Store({
@@ -33,7 +29,8 @@ const store = new Vuex.Store({
     getters: {
         getUsers: state => state.users,
         getUserDetails: state => state.userDetails
-    }
+    },
+    strict: true
 });
 
 export default store;
