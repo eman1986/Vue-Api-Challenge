@@ -25,8 +25,8 @@ export const GetUserById = (context, userId) => {
 
 export const CreateUser = (context, user) => {
     api.createUser(user)
-        .then((resp) => {
-            context.commit('AddUser', user);
+        .then(() => {
+            context.dispatch('GetUsers');
             swal('Success!', 'User Created Successfully', 'success');
         })
         .catch((error) => {
@@ -37,8 +37,9 @@ export const CreateUser = (context, user) => {
 
 export const SaveUser = (context, user) => {
     api.saveUser(user)
-        .then((resp) => {
-            context.commit('UpdateUser', user);
+        .then(() => {
+            context.dispatch('GetUsers');
+            swal('Success!', 'User Updated Successfully', 'success');
         })
         .catch((error) => {
             swal('Oops...', 'Failed to update user', 'error');
@@ -48,8 +49,9 @@ export const SaveUser = (context, user) => {
 
 export const DeleteUser = (context, userId) => {
     api.deleteUser(userId)
-        .then((resp) => {
-            context.commit('RemoveUser', userId);
+        .then(() => {
+            context.dispatch('GetUsers');
+            swal('Success!', 'User Deleted Successfully', 'success');
         })
         .catch((error) => {
             swal('Oops...', 'Failed to delete user', 'error');

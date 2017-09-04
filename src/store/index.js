@@ -21,14 +21,7 @@ const store = new Vuex.Store({
     },
     mutations: {
         SetUsers,
-        SetUserDetails,
-        AddUser,
-        UpdateUser,
-        RemoveUser
-    },
-    getters: {
-        getUsers: state => state.users,
-        getUserDetails: state => state.userDetails
+        SetUserDetails
     },
     strict: true
 });

@@ -20,7 +20,7 @@
                     <small>
                         <router-link :to="{ name: 'Details', params: { id: user.id } }"><i class="fa fa-eye"></i></router-link>
                         <router-link :to="{ name: 'Edit', params: { id: user.id } }"><i class="fa fa-pencil"></i></router-link>
-                        <a href="#"><i class="fa fa-trash"></i></a>
+                        <a href="#" v-on:click="deleteUser(user.id)"><i class="fa fa-trash"></i></a>
                     </small>
                 </td>
             </tr>
@@ -30,14 +30,32 @@
 </template>
 
 <script type="text/javascript">
+    import { mapState } from 'vuex';
+
     export default {
-        computed: {
-            users: function() {
-                return this.$store.getters.getUsers;
-            }
-        },
-        mounted: function() {
+        computed: mapState({
+            users: state => state.users
+        }),
+        created: function() {
             this.$store.dispatch('GetUsers');
+        },
+        methods: {
+            deleteUser(id)
+            {
+                const store = this.$store;
+
+                this.$swal({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then(function () {
+                    store.dispatch('DeleteUser', id);
+                });
+            }
         }
     }
 </script>

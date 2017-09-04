@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="control">
-                <button type="button" v-on:click="sendForm" class="button is-primary">Create User</button>
+                <button type="button" v-on:click="sendForm" @keyup.enter="sendForm" class="button is-primary">Create User</button>
                 &nbsp;
                 <router-link :to="{ name: 'Home' }" class="button is-danger">Cancel</router-link>
             </div>
@@ -52,16 +52,17 @@
             };
         },
         methods: {
-            sendForm() {
+            sendForm()
+            {
                 this.$validator.validateAll().then((result) =>
                 {
                     if (result)
                     {
                         let user = {
-                            FirstName: this.FirstName,
-                            LastName: this.LastName,
-                            EmployeeId: this.EmployeeId,
-                            Department: this.Department
+                            firstName: this.FirstName,
+                            lastName: this.LastName,
+                            employeeId: this.EmployeeId,
+                            department: this.Department
                         };
 
                         this.$store.dispatch('CreateUser', user);
