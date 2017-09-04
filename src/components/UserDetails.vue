@@ -14,7 +14,7 @@
                 <router-link :to="{ name: 'Edit', params: { id: user.id } }">Edit</router-link>
             </p>
             <p class="card-footer-item">
-                <a href="#" v-on:click="deleteUser(user.id)" class="has-text-danger">Delete</a>
+                <a href="#" v-on:click.prevent="deleteUser(user.id)" class="has-text-danger">Delete</a>
             </p>
         </footer>
     </div>
@@ -47,7 +47,7 @@
                 }).then(function () {
                     store.dispatch('DeleteUser', id);
 
-                    this.router.replace('/');
+                    router.replace('/');
                 });
             }
         }

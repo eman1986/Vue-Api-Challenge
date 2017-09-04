@@ -20,7 +20,7 @@
                     <small>
                         <router-link :to="{ name: 'Details', params: { id: user.id } }"><i class="fa fa-eye"></i></router-link>
                         <router-link :to="{ name: 'Edit', params: { id: user.id } }"><i class="fa fa-pencil"></i></router-link>
-                        <a href="#" v-on:click="deleteUser(user.id)"><i class="fa fa-trash"></i></a>
+                        <a href="#" v-on:click.prevent="deleteUser(user.id)"><i class="fa fa-trash"></i></a>
                     </small>
                 </td>
             </tr>
