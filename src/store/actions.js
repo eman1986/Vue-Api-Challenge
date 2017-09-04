@@ -27,6 +27,7 @@ export const CreateUser = (context, user) => {
     api.createUser(user)
         .then((resp) => {
             context.commit('AddUser', user);
+            swal('Success!', 'User Created Successfully', 'success');
         })
         .catch((error) => {
             swal('Oops...', 'Failed to create user', 'error');

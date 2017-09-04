@@ -60,6 +60,7 @@ module.exports = {
             compress: {warnings: false}
         }),
         new HtmlWebpackPlugin({
+            favicon: 'src/favicon.ico',
             template: 'src/index.html'
         })
     ]

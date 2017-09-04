@@ -8,10 +8,12 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
 export default new VueRouter({
+    saveScrollPosition: true,
+    linkActiveClass: 'is-active',
     routes: [
         { path: '/', name: 'Home', component: UserList },
-        { path: '/:id', name: 'Details', component: UserDetails },
         { path: '/create', name: 'Create', component: CreateUser },
+        { path: '/details/:id', name: 'Details', component: UserDetails },
         { path: '/update/:id', name: 'Edit', component: UpdateUser }
     ]
 });
