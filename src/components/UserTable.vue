@@ -1,6 +1,6 @@
 <template>
     <div>
-        <table class="table">
+        <table class="table is-bordered is-striped is-fullwidth">
             <thead>
             <tr>
                 <th>First Name</th>
@@ -16,7 +16,7 @@
                 <td>{{ user.lastName }}</td>
                 <td>{{ user.employeeId }}</td>
                 <td>{{ user.department }}</td>
-                <td>
+                <td class="has-text-centered">
                     <small>
                         <router-link :to="{ name: 'Details', params: { id: user.id } }"><i class="fa fa-eye"></i></router-link>
                         <router-link :to="{ name: 'Edit', params: { id: user.id } }"><i class="fa fa-pencil"></i></router-link>
