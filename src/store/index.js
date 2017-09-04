@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { GetUsers, GetUserById, CreateUser, SaveUser, DeleteUser } from './actions';
-import { SetUsers, SetUserDetails, AddUser, UpdateUser, RemoveUser } from './mutations';
+import { SetUsers, SetUserDetails } from './mutations';
 
 Vue.use(Vuex);
 
@@ -22,6 +22,11 @@ const store = new Vuex.Store({
     mutations: {
         SetUsers,
         SetUserDetails
+    },
+    getters: {
+        getUserDetails: state => {
+            return state.userDetails;
+        }
     },
     strict: true
 });

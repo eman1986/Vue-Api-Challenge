@@ -14,7 +14,7 @@
                 <router-link :to="{ name: 'Edit', params: { id: user.id } }">Edit</router-link>
             </p>
             <p class="card-footer-item">
-                <a href="#" class="has-text-danger">Delete</a>
+                <a href="#" v-on:click="deleteUser(user.id)" class="has-text-danger">Delete</a>
             </p>
         </footer>
     </div>
@@ -34,6 +34,7 @@
             deleteUser(id)
             {
                 const store = this.$store;
+                const router = this.$router;
 
                 this.$swal({
                     title: 'Are you sure?',
@@ -45,6 +46,8 @@
                     confirmButtonText: 'Yes, delete it!'
                 }).then(function () {
                     store.dispatch('DeleteUser', id);
+
+                    this.router.replace('/');
                 });
             }
         }

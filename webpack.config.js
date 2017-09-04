@@ -3,13 +3,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const VENDOR_LIBS = [
-    'axios', 'sweetalert2', 'uuid',
-    'vee-validate', 'vue', 'vue-router', 'vue-sweetalert2', 'vuex'
+    'axios', 'sweetalert2', 'vee-validate', 'vue', 'vue-router', 'vue-sweetalert2', 'vuex'
 ];
-
-function resolve(dir) {
-    return path.join(__dirname, '..', dir)
-}
 
 module.exports = {
     entry:   {
