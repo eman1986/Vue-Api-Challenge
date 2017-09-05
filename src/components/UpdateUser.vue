@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-content">
             <p class="title">
-                Create User
+                Update User
             </p>
             <div class="field">
                 <label for="FirstName" class="label">First Name</label>
