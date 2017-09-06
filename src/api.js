@@ -1,12 +1,14 @@
 import axios from 'axios';
 
+const BASE_URI = 'https://dev-server.local.com:5000';
+
 /**
  * Get List of Users
  * @returns {AxiosPromise}
  */
 function getUsers()
 {
-    return axios.get('http://localhost:5000/api/User/GetAll');
+    return axios.get(`${BASE_URI}/api/User/GetAll`);
 }
 
 /**
@@ -16,7 +18,7 @@ function getUsers()
  */
 function getUserById(id)
 {
-    return axios.get(`http://localhost:5000/api/User/Get/${id}`);
+    return axios.get(`${BASE_URI}/api/User/Get/${id}`);
 }
 
 /**
@@ -26,7 +28,7 @@ function getUserById(id)
  */
 function createUser(user)
 {
-    return axios.post('http://localhost:5000/api/User/Insert', user);
+    return axios.post(`${BASE_URI}/api/User/Insert`, user);
 }
 
 /**
@@ -36,7 +38,7 @@ function createUser(user)
  */
 function saveUser(user)
 {
-    return axios.post('http://localhost:5000/api/User/Save', user);
+    return axios.post(`${BASE_URI}/api/User/Save`, user);
 }
 
 /**
@@ -46,7 +48,7 @@ function saveUser(user)
  */
 function deleteUser(id)
 {
-    return axios.get(`http://localhost:5000/api/User/Delete/${id}`);
+    return axios.get(`${BASE_URI}/api/User/Delete/${id}`);
 }
 
 export { getUsers, getUserById, createUser, saveUser, deleteUser };
